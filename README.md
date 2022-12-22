@@ -1,0 +1,1 @@
+# QaDev_Inditex

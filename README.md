@@ -55,6 +55,5 @@ En el caso del punto 3 se creó el código usando JS, y este podrá ser ejecutad
 1. ubicarse desde la consola dentro del fichero ejercicio_3 y acceder al punto3
 2. ejecutar el comando npm test
 > en caso de tener inconvenientes con este comando se puede ejecutar de igual manera node IdentificarDuplicados.js
-![image](https://user-images.githubusercontent.com/77740619/209519752-90ac1aa1-a6c3-45f4-862b-f6a3a938d7c9.png)
 
 

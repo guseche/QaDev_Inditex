@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+}
+
+group 'com.inditex.certificacion'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+    test{
+        java {
+            srcDir file("src/test/java")
+            exclude '**/*UiRunner.java'
+        }
+        resources {
+            srcDir file("src/test/java")
+            exclude '**/*.java'
+        }
+    }
+}
+
+ext{
+    karateVersion = '0.9.2'
+    cucumberReport = '5.3.0'
+}
+
+dependencies {
+    testImplementation "com.intuit.karate:karate-junit4:0.9.6"
+    testImplementation "com.intuit.karate:karate-netty:${karateVersion}"
+    testImplementation "com.intuit.karate:karate-apache:${karateVersion}"
+    testImplementation "net.masterthought:cucumber-reporting:${cucumberReport}"
+    testImplementation 'junit:junit:4.12'
+}

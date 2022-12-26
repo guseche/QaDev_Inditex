@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+      
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            
+        <meta charset="utf-8">
+            
+        <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+            
+        <link href="res/bootstrap.min.css" rel="stylesheet" type="text/css">
+            
+        <link href="res/karate-report.css" rel="stylesheet" type="text/css">
+            
+        <link href="favicon.ico" rel="shortcut icon">
+            <script src="res/jquery.min.js" type="text/javascript"></script>
+    <script src="res/jquery.tablesorter.min.js" type="text/javascript"></script>
+    <script src="res/bootstrap.min.js" type="text/javascript"></script>
+    <script src="res/karate-report.js" type="text/javascript"></script>
+    
+        <title>com.inditex.certification.features.create_your_user</title>
+          
+    </head>
+      
+    <body>
+            
+        <div id="root-container">
+                  
+            <div id="leftnav">
+                        
+                <div class="nav-logo">
+                              <a href="karate-summary.html">
+            <img alt="Karate" src="res/karate-logo.svg">
+          </a>
+          
+                    <div class="nav-count">
+                                    
+                        <div class="bg-success" id="nav-pass">1</div>
+                                    
+                        <div class="bg-danger" id="nav-fail">0</div>
+                                  
+                    </div>
+                            
+                </div>
+                        
+                <div id="nav-type">Scenarios</div>
+                         
+        
+                <div id="nav-date">2022-12-26 02:10:11 a.m.</div>
+                        
+      
+                <div class="nav-container">
+                    <div class="nav-item passed">
+                        <a href="#[1:15]">[1:15] Create user and retrieve their data </a>
+                    </div>
+                </div>
+            </div>
+                  
+            <div id="content">
+                      
+                <div class="page-heading alert alert-primary">
+                    <a href="karate-summary.html">Summary</a><span class="feature-label">|</span><a href="karate-tags.html">Tags</a><span class="feature-label">|</span><span class="feature-label">Feature:</span><span class="feature-name">com/inditex/certification/features/create_your_user.feature</span><span class="feature-description">Create your user</span>
+                </div>
+                <div class="scenario">
+                    <div class="scenario-heading" id="[1:15]">
+                        <div class="heading-container">
+                            <div class="scenario-tags"></div>
+                            <span class="scenario-keyword">Scenario: [1:15]</span><span class="scenario-name">Create user and retrieve their data </span>
+                        </div>
+                        <div class="scenario-time passed">ms: 1953</div>
+                    </div>
+                    <div class="step-row">
+                        <div class="step-container" id="[1:15]bg">
+                            <div class="step-ref bg-step">&gt;&gt;</div>
+                            <div class="step-cell passed">Background:</div>
+                        </div>
+                        <div class="time-cell passed"></div>
+                    </div>
+                    <div class="step-row" data-parent="[1:15]bg">
+                        <div class="step-container" id="1">
+                            <div class="step-ref bg-step">1</div>
+                            <div class="step-cell passed">* def generateUser =</div>
+                        </div>
+                        <div class="time-cell passed">30</div>
+                    </div>
+                    <div class="preformatted" data-parent="1">function(){
+var date = new Date();
+var randomValue = Math.floor(Math.random() * 99);
+return 'user' + date.toLocaleTimeString() + randomValue
+}</div>
+                    <div class="step-row" data-parent="[1:15]bg">
+                        <div class="step-container" id="2">
+                            <div class="step-ref bg-step">2</div>
+                            <div class="step-cell passed">* def userName = generateUser().replaceAll(':', '')</div>
+                        </div>
+                        <div class="time-cell passed">251</div>
+                    </div>
+                    <div class="step-row" data-parent="[1:15]bg">
+                        <div class="step-container" id="3">
+                            <div class="step-ref bg-step">3</div>
+                            <div class="step-cell passed">* print userName</div>
+                        </div>
+                        <div class="time-cell passed">1</div>
+                    </div>
+                    <div class="preformatted" data-parent="3">02:10:09.973 [print] user02100913</div>
+                    <div class="step-row">
+                        <div class="step-container">
+                            <div class="step-ref passed"></div>
+                            <div class="step-cell comment">#Create user</div>
+                        </div>
+                        <div class="time-cell comment"></div>
+                    </div>
+                    <div class="step-row">
+                        <div class="step-container" id="4">
+                            <div class="step-ref passed">4</div>
+                            <div class="step-cell passed">Given url 'https://petstore.swagger.io/v2/user'</div>
+                        </div>
+                        <div class="time-cell passed">10</div>
+                    </div>
+                    <div class="step-row">
+                        <div class="step-container" id="5">
+                            <div class="step-ref passed">5</div>
+                            <div class="step-cell passed">And request</div>
+                        </div>
+                        <div class="time-cell passed">19</div>
+                    </div>
+                    <div class="preformatted" data-parent="5">{
+  id: 0,
+  username: '#(userName)',
+  firstName: 'gabriel',
+  lastName: 'useche',
+  email: 'gjusecheo@gmail.com',
+  password: 'Pass1234',
+  phone: '3166264244',
+  userStatus: 0
+}</div>
+                    <div class="step-row">
+                        <div class="step-container" id="6">
+                            <div class="step-ref passed">6</div>
+                            <div class="step-cell passed">When method POST</div>
+                        </div>
+                        <div class="time-cell passed">927</div>
+                    </div>
+                    <div class="preformatted" data-parent="6">02:10:10.092 request:
+1 &gt; POST https://petstore.swagger.io/v2/user
+1 &gt; Accept-Encoding: gzip,deflate
+1 &gt; Connection: Keep-Alive
+1 &gt; Content-Length: 164
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Host: petstore.swagger.io
+1 &gt; User-Agent: Apache-HttpClient/4.5.5 (Java/11.0.15)
+{"id":0,"username":"user02100913","firstName":"gabriel","lastName":"useche","email":"gjusecheo@gmail.com","password":"Pass1234","phone":"3166264244","userStatus":0}
+
+02:10:10.928 response time in milliseconds: 828.29
+1 &lt; 200
+1 &lt; Access-Control-Allow-Headers: Content-Type, api_key, Authorization
+1 &lt; Access-Control-Allow-Methods: GET, POST, DELETE, PUT
+1 &lt; Access-Control-Allow-Origin: *
+1 &lt; Connection: keep-alive
+1 &lt; Content-Type: application/json
+1 &lt; Date: Mon, 26 Dec 2022 07:10:10 GMT
+1 &lt; Server: Jetty(9.2.9.v20150224)
+1 &lt; Transfer-Encoding: chunked
+{"code":200,"type":"unknown","message":"9223372036854594627"}</div>
+                    <div class="step-row">
+                        <div class="step-container" id="7">
+                            <div class="step-ref passed">7</div>
+                            <div class="step-cell passed">Then status 200</div>
+                        </div>
+                        <div class="time-cell passed">0</div>
+                    </div>
+                    <div class="step-row">
+                        <div class="step-container" id="8">
+                            <div class="step-ref passed">8</div>
+                            <div class="step-cell passed">* def idCreateUser = Number(response.message)</div>
+                        </div>
+                        <div class="time-cell passed">170</div>
+                    </div>
+                    <div class="step-row">
+                        <div class="step-container" id="9">
+                            <div class="step-ref passed">9</div>
+                            <div class="step-cell passed">* print 'id user is',idCreateUser</div>
+                        </div>
+                        <div class="time-cell passed">19</div>
+                    </div>
+                    <div class="preformatted" data-parent="9">02:10:11.125 [print] id user is 9.2233720368545946E18</div>
+                    <div class="step-row">
+                        <div class="step-container">
+                            <div class="step-ref passed"></div>
+                            <div class="step-cell comment">#Created user validation</div>
+                        </div>
+                        <div class="time-cell comment"></div>
+                    </div>
+                    <div class="step-row">
+                        <div class="step-container" id="10">
+                            <div class="step-ref passed">10</div>
+                            <div class="step-cell passed">Given url 'https://petstore.swagger.io/v2/user/' + userName</div>
+                        </div>
+                        <div class="time-cell passed">29</div>
+                    </div>
+                    <div class="step-row">
+                        <div class="step-container" id="11">
+                            <div class="step-ref passed">11</div>
+                            <div class="step-cell passed">When method GET</div>
+                        </div>
+                        <div class="time-cell passed">455</div>
+                    </div>
+                    <div class="preformatted" data-parent="11">02:10:11.162 request:
+2 &gt; GET https://petstore.swagger.io/v2/user/user02100913
+2 &gt; Accept-Encoding: gzip,deflate
+2 &gt; Connection: Keep-Alive
+2 &gt; Host: petstore.swagger.io
+2 &gt; User-Agent: Apache-HttpClient/4.5.5 (Java/11.0.15)
+
+02:10:11.607 response time in milliseconds: 437.29
+2 &lt; 200
+2 &lt; Access-Control-Allow-Headers: Content-Type, api_key, Authorization
+2 &lt; Access-Control-Allow-Methods: GET, POST, DELETE, PUT
+2 &lt; Access-Control-Allow-Origin: *
+2 &lt; Connection: keep-alive
+2 &lt; Content-Type: application/json
+2 &lt; Date: Mon, 26 Dec 2022 07:10:11 GMT
+2 &lt; Server: Jetty(9.2.9.v20150224)
+2 &lt; Transfer-Encoding: chunked
+{"id":9223372036854594627,"username":"user02100913","firstName":"gabriel","lastName":"useche","email":"gjusecheo@gmail.com","password":"Pass1234","phone":"3166264244","userStatus":0}</div>
+                    <div class="step-row">
+                        <div class="step-container" id="12">
+                            <div class="step-ref passed">12</div>
+                            <div class="step-cell passed">Then status 200</div>
+                        </div>
+                        <div class="time-cell passed">0</div>
+                    </div>
+                    <div class="step-row">
+                        <div class="step-container" id="13">
+                            <div class="step-ref passed">13</div>
+                            <div class="step-cell passed">And match $.id == idCreateUser</div>
+                        </div>
+                        <div class="time-cell passed">41</div>
+                    </div>
+                </div>
+            </div>
+                
+        </div>
+           
+  
+    </body>
+    
+</html>
